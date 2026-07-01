@@ -1,0 +1,1 @@
+DROP INDEX IF EXISTS idx_training_items_slug;

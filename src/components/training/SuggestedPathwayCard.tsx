@@ -1,0 +1,45 @@
+import { Clock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  TrainingPathwayCard,
+  PathwayBadgeRow,
+  PathwayTitle,
+  PathwayDescription,
+} from "./TrainingPathwayCard";
+
+export interface SuggestedPathwayItem {
+  title: string;
+  description: string;
+  duration: string;
+  steps: number;
+  credential: string;
+  match: string;
+}
+
+interface SuggestedPathwayCardProps {
+  item: SuggestedPathwayItem;
+}
+
+const SuggestedPathwayCard = ({ item }: SuggestedPathwayCardProps) => (
+  <TrainingPathwayCard className="border border-border hover:shadow-sm transition-shadow">
+    <PathwayBadgeRow>
+      <Badge variant="outline" className="text-xs">{item.match}</Badge>
+      <Badge variant="secondary" className="text-xs">{item.credential}</Badge>
+    </PathwayBadgeRow>
+    <PathwayTitle>{item.title}</PathwayTitle>
+    <PathwayDescription>{item.description}</PathwayDescription>
+    <div className="flex items-center gap-3 text-xs text-muted-foreground">
+      <span className="flex items-center gap-1">
+        <Clock className="h-3 w-3" />
+        {item.duration}
+      </span>
+      <span>{item.steps} steps</span>
+    </div>
+    <Button variant="link" size="sm" className="h-auto p-0 text-xs font-medium">
+      View Pathway →
+    </Button>
+  </TrainingPathwayCard>
+);
+
+export default SuggestedPathwayCard;

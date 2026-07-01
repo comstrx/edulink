@@ -1,0 +1,1 @@
+ALTER TABLE public.taxonomy_terms ADD CONSTRAINT unique_term_type_slug UNIQUE (term_type_id, slug);

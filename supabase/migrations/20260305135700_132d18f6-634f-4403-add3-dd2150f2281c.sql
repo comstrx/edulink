@@ -1,0 +1,1 @@
+ALTER TABLE public.teacher_profiles ADD COLUMN education jsonb DEFAULT '[]'::jsonb;

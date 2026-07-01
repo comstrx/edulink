@@ -1,0 +1,1 @@
+ALTER TYPE provider_verification_status ADD VALUE IF NOT EXISTS 'trusted_partner';
